@@ -1,0 +1,72 @@
+tusk_1() {
+    echo "hello student!"
+}
+
+tusk_2-3() {
+    echo "Enter your name:"
+    read name
+    echo "Welcome to terminal $name"
+}
+
+tusk_4() {
+    mkdir -p /tmp/test
+}
+
+tusk_5() {
+    touch  /tmp/mydate.txt
+}
+
+tusk_6() {
+    current_time=$(date +'%d.%m.%Y %H:%M')
+    echo "$current_time" >> /tmp/mydate.txt
+}
+
+tusk_7() {
+    echo "save data.."
+
+    local count=$1
+
+    while [ $count -gt 0 ]; do
+        echo "Time: $count"
+        sleep 0.5
+        ((count--))
+    done
+}
+
+tusk_8() {
+    echo "Data saved. continue work"
+}
+
+tusk_9() {
+    df -h >> /tmp/mydate.txt
+}
+
+tusk_10() {
+    mkdir -p /opt/mydate
+    cp /tmp/mydate.txt /opt/mydate/newmydate.txt
+}
+
+tusk_11() {
+    sleep 5
+    echo "Well done boss!"
+}
+
+main() {
+    tusk_1
+    tusk_2-3
+    tusk_4
+    tusk_5
+    tusk_6
+    tusk_7 10
+    tusk_8
+    tusk_9
+    tusk_10
+    tusk_11
+}
+
+main
+
+
+
+nano /fullscript.sh 
+bash /fullscript.sh
